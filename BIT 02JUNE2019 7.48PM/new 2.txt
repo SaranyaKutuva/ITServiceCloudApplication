@@ -1,0 +1,10 @@
+<DataGridTextColumn Header="Job Request Id" Binding="{Binding JobRequestID}"/>
+                    <DataGridTextColumn Header="Job type" Binding="{Binding JobTypeID}"/>
+                    <DataGridTextColumn Header="Request Date" Binding="{Binding RequestDate}"/>
+                    <DataGridTextColumn Header="Request Time" Binding="{Binding RequestTime}"/>
+                    <DataGridTextColumn Header="Priority" Binding="{Binding Priority}"/>
+                    <DataGridTextColumn Header="Comments" Binding="{Binding Comments}"/>
+                    <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
+                    <DataGridTextColumn Header="Client Id" Binding="{Binding ClientID}"/>
+                    <DataGridTextColumn Header="Client Name" Binding="{Binding ContactName}"/>
+                    <DataGridTextColumn Header="Location" Binding="{Binding LocationID}"/>

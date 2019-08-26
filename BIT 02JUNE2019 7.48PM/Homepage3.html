@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+* {
+  box-sizing: border-box;
+ 
+}
+
+body {
+  font-family: verdana;
+  
+  font-size: 12pt;
+ 
+  background: #f1f1f1;
+  
+  
+}
+
+  
+
+
+
+/* Header/Blog Title */
+.header {
+  padding: 0.5px;
+  text-align: left;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+#headerH2 {
+	margin-left: 10%;
+}
+.bigger 
+{ font-size:178%;
+font-family: Georgia;
+font-variant: small-caps;
+text-align: center;
+text-shadow: 2px 2px 5px  #0077b3; }
+/* Style list */
+.ul
+{
+
+}
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color:#36486b;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+#topnav {
+  overflow: hidden;
+  background-color: #333;
+  background-color: #36486b;
+}
+
+/* Navbar links */
+#topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  background-color: #36486b;
+  padding: 14px;
+  text-decoration: none;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position:20px ;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+} 
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+  color: black;
+  
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  color: black;
+  padding-left: 10px;
+  
+  
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  
+  padding: 30px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 10px;
+  font-align: justify;
+  margin-top: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+</style>
+</head>
+<body>
+
+<div class="header"  id ="home">
+
+<img src="BitLogo_YellowBlue_1.png" alt="logo" width=100% height=6%/> 
+
+</div>
+
+
+
+
+
+<div class="topnav" id="topnav">
+  <a href="#home">Home</a>
+  
+  <a href="#home" >About Us</a>
+  <a href="#feedback">Feedback</a>
+  <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact</a>
+  
+   <a href="login.php" class ="document.getElementById('id01').style.display='block'" style="float:right">Login</a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()"></a>
+</div>
+
+<div class="row" >
+  <div class="leftcolumn">
+    <div class="card" >
+      <h2>About Our Services</h2>
+      <h5></h5>
+	  <img height=50% width=100% src = "bitimage.jpg"> </img>
+     
+      <p style="text-align:justify">BIT field support services is a division of Business Information Technology Pty Ltd (BIT).We provide IT support services. Our IT professionals are available as consultants for your business. You might want some advice on how to set up your networks or information on which machines and software would be most appropriate for your business. We are happy to work with you closely to make sure you are getting the technology and support that your business needs to succeed. 
+	</p>
+	<p></p>
+	  <p>Business IT Support includes:</p>
+
+	  <ul style="list-style-type:disc">
+  <li>Installing, configuring & troubleshooting PC</li>
+  <li>Software and hardware installation</li>
+  <li>On-site and remote support</li>
+  <li>Periodic IT audits</li>
+  <li>Data Security, protection and back up</li>
+  <li>Desktop, laptop, tablet, printer, phone support, maintenance and monitoring</li>
+  <li>Wi-fi, internet setup, troubleshooting & fixing slow connections</li>
+  <li>Networking issue resolution for LAN and WAN</li>
+  
+</ul> 
+
+<p></p>
+
+	  
+    </div>
+    <div class="card">
+      <h2>Why BIT Services</h2>
+          
+	   <img height=100% width=100% src = "why.jpg"> </img>
+      <p>                     </p>
+	  <p>						</p>
+	  <p>						</p>
+	  <p style="text-align:justify">                     
+	  <ul style="list-style-type:disc;" >
+	  
+		<li style="text-align:justify"><b>FASTER TURNAROUND:</b> Restoring your IT service is our first priority. We maintain this commitment continuously with our customers</li>
+		
+<li style="text-align:justify"><b>EXPERT MANANGEMENT:</b> An understanding of IT issues and their solutions is key to timely resolution. Our experience and experts provide this</li>
+<li style="text-align:justify"><b>COST MANANGEMENT:</b> Managing IT service and reducing IT operation cost is the goal of every business and our services facilitate this for our customers</li>
+<li style="text-align:justify"><b>ONSITE SUPPORT IN ADDITION TO REMOTE SUPPORT:</b> Remote support is fantastic and sometimes it is handy to have someone onsite to fix the issues. We maintain this standard for our customers constantly</li>
+<li style="text-align:justify"><b>GUARANTEED FIX:</b> We act proactively ensure guaranteed service to our customers. Backup, redundancy and workaround are our key elements of providing guaranteed services</li>
+<li style="text-align:justify"><b>OUR SUPPORT VISIBILITY/SYSTEM:</b> We use an interactive cloud based ticketing system which is easy to use, log faults, monitor service tasks and easy to follow up. With this system our service desk can be integrated with your business needs.</li>
+<li style="text-align:justify"><b>ON CALL SUPPORT:</b> Some of our customers only need infrequent IT support. They simply call us and we provide remote remote or onsite support as required</li>
+<li style="text-align:justify"><b>PROJECT:</b> Our projects include small to large setups including office setup, network setup, new server/rack, application, hardware setup, office relocation and anything related to IT</li>
+</ul> </p> 
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card" id="home">
+      <h3>About Us</h3>
+	  <img height=100% width=100% src="comtools.jpg"></img>
+      
+      <p style="text-align:justify">At BIT Services we are dedicated to delivering impeccable service to our clients. When you invest with us, expect top quality from start to finish. We will work with you to ensure that our services meet your needs and if suitable can provide onsite engineers to assist with your IT needs</p>
+    </div>
+    <div class="card">
+	<h3>We are your IT helpdesk</h3>
+	<img  height=100% width=100% src ="helpdesk.png"></img>
+     <p id="contact" style="text-align:justify">We Are Your Helpdesk On-time, reliable IT Support can help to grow your business faster and can minimize downtime and outages. We work as your office IT support team, so you can have the peace of mind that someone is always looking after your IT services.
+	  Let us handle your day to day IT operations and troubleshooting, so you can focus on what is important.</p>	  
+    </div>
+	  <div  id="contact"></div>
+    <div class="card" id="contact1">
+	<h3> Contact Us</h3>
+       <img height=100% width=100% src="contact (2).jpg"></img>
+       <p id="feedback"><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i>205 Peats Ferry Road Hornsby 2077</p>
+    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 1515123225</p>
+    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: info@bitservices.com.au</p>
+	
+    </div>
+	<div class="card" id="feedback1" >
+	<h3>Feedback</h3>
+	<img  height=100% width=100% src ="feedback.jpg"></img>
+    <form action="/action_page.php" target="_blank">
+      <p><input size=70 class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input size=70 class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input size=70 class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input size=70 class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p> 
+        <button class="w3-button w3-black" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form> 
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+<div class="footer">
+
+  <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+  
+  <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  
+  <div class="w3-xlarge w3-section">
+  </div>
+  <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i>205 Peats Ferry Road Hornsby 2077</p>
+    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 1515123225</p>
+    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: info@bitservices.com.au</p>
+ 
+</footer>
+</div>
+<script>
+window.onscroll = function() {myFunction()};
+
+var topnav = document.getElementById("topnav");
+var sticky = topnav.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    topnav.classList.add("sticky")
+  } else {
+    topnav.classList.remove("sticky");
+  }
+}
+</script>
+</body>
+</html>

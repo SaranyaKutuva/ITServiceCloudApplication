@@ -1,0 +1,4 @@
+Select user_Id from bit_user_logon where 
+user_id not in (select user_Id from bit_employee where employee_id!=bit_user_logon.account_Ref and bit_user_logon.account_Type='EMPLOYEE'
+                UNION select user_Id from bit_client where client_id!=bit_user_logon.account_Ref and bit_user_logon.account_Type='CLIENT'  
+                UNION select user_Id from bit_contractor  where contractor_id!=bit_user_logon.account_Ref and bit_user_logon.account_Type='CONTRACTOR')

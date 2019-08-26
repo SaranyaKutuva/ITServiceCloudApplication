@@ -1,0 +1,58 @@
+BEGIN
+   /*DECLARE UserId INT DEFAULT 2;
+SET @UserId=2;
+*/
+declare vuserId INT DEFAULT 0;
+declare vempId INT DEFAULT 0;
+IF (MODE='INSERT' )
+THEN
+/*INSERT INTO bit_client(CompanyName) VALUES (CompanyName1);*/
+
+
+INSERT INTO bit_user_logon(UserName,account_Type,account_Ref,Password) values(FirstName1,'EMPLOYEE',vempId,'welcome123');
+SET vuserId = LAST_INSERT_ID();
+
+INSERT INTO bit_employee 
+( User_id,Employee_Type,FirstName,LastName, DOB, Gender, StreetAddress,Suburb,State,PostCode,PhoneNo, Email, Start_Date, End_Date, Created_By, Creation_Date, Updated_By, Updated_Date, STATUS)
+ VALUES
+(vuserId,Employee_Type1,FirstName1,LastName1, DOB1, Gender1, StreetAddress1,Suburb1,State1,PostCode1,PhoneNo1, Email1, Start_Date1, End_Date1, Created_By1, Creation_Date1, Updated_By1, Updated_Date1, STATUS1);
+ SET vempId = LAST_INSERT_ID();
+
+
+UPDATE bit_user_logon SET UserName=CONCAT(FirstName, vuserId),account_Ref=vempId WHERE userId =vuserId;
+
+
+
+ELSEIF (MODE='UPDATE') THEN
+ set vuserId =User_id1;
+  IF (User_id1 =0) THEN
+    SELECT User_Id into vuserID FROM bit_employee WHERE    employee_id=employee_id1; 
+  end if;
+
+   UPDATE bit_employee SET 
+                	User_id=vuserId 
+                         ,FirstName=FirstName1
+                         ,LastName=LastName1
+	         ,Employee_Type = Employee_Type1
+                         ,DOB=DOB1
+                         ,Gender=Gender1
+	         ,StreetAddress=StreetAddress1
+	         ,Suburb=Suburb1
+	         ,PostCode=PostCode1
+	         ,State=State1
+                         ,PhoneNo=PhoneNo1
+                         ,Email=Email1
+                         ,Start_Date=Start_Date1
+                         ,End_Date=End_Date1
+                        ,STATUS=STATUS1
+                         where Employee_Id=Employee_Id1;
+            
+ELSEIF (MODE='DELETE') THEN
+
+   UPDATE bit_Employee SET STATUS='INACTIVE'
+     where employee_Id = Employee_Id1;
+            
+ 
+END IF;
+
+END

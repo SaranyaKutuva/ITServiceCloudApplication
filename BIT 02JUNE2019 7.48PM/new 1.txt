@@ -1,0 +1,19 @@
+
+
+
+$.ajax({ url: "myurl.php",
+    data: { val0: "val0", functionid: "identifier" }
+}).done( function( result ) { alert( result ); });
+
+session_start();
+	if(!isset($_SESSION['type']))
+	{
+		header('Refresh: 5; URL=login.php');
+		echo("You are not logged in yet! Redirecting you to login page.........");
+	}
+	else if($_SESSION['type'] != 'client')
+	{
+		echo "This page is only available to the staff!!!!!!!";
+	}
+	else
+	{

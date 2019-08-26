@@ -1,0 +1,10 @@
+ set NEW.Updated_Date=SYSDATE();
+  set NEW.Creation_Date=SYSDATE();
+  SET NEW.Updated_By = @UserId;
+  SET NEW.Created_By = @UserId;
+  
+  BEGIN
+     SET NEW.Updated_Date =SYSDATE();
+     SET NEW.Updated_By = @UserId;
+  
+END

@@ -1,0 +1,40 @@
+ private void SearchContractor()
+        { 
+             DAL dal = new DAL();
+
+         
+            ContractorCollection.Clear();
+
+            DataTable dt = dal.Read("Select * from bit_contractor , bit_user_logon where bit_user_logon.account_Type='CONTRACTOR' AND bit_user_logon.account_Ref= bit_client.client_Id and  (STATUS='ACTIVE' OR STATUS IS NULL) and " + SelectedContractorCols + " like '%" + ContractorSearchString +"%'");
+
+            int i = 0;
+            int index = 0;
+            Contractor contractorFirstRecord = new Contractor();
+
+            foreach (DataRow dr in dt.Rows)
+             {
+                index = i;
+                if (index == 0)
+                {
+                    contractorFirstRecord = new Contractor(dr);
+                }
+                Contractor client = new Contractor(dr);
+                 ContractorCollection.Add(Contractor);
+                i++;
+             }
+            SelectedContracotr = contractorFirstRecord;
+           // MessageBox.Show(SelectedClientCols + ClientSearchString);
+
+        }
+		
+		private string contractorSearchString;
+		 public string ContractorSearchString
+        {
+            get { return contractorSearchString; }
+            set
+            {
+                contractorSearchString = value;
+                OnPropertyChanged("ContractorSearchString");
+            }
+
+        }

@@ -1,0 +1,42 @@
+CREATE PROCEDURE BitInsertUpdateDeleteContractor(IN Contractor_Id1 INT(10), IN User_Id1 INT(10), In FirstName1 VARCHAR(30), IN LastName1 VARCHAR(30), IN DOB1 DATE, IN Gender1 VARCHAR(10), IN PostCode1 INT(10), IN State1 VARCHAR(10), IN StreetAddress1 VARCHAR(60), IN Suburb1 VARCHAR(40), IN PhoneNo1 INT(10), IN Email1 VARCHAR(50), IN Start_Date1 DATE, IN End_Date1 DATE, IN Created_By1 INT, IN Creation_Date1 DATE, IN Updated_By1 INT, IN Updated_Date1 DATE, IN STATUS1 VARCHAR(10), IN Mode VARCHAR(20))  
+BEGIN
+DECLARE vuserId INT DEFAULT 0;
+IF (MODE='INSERT' )
+THEN
+/*INSERT INTO bit_client(CompanyName) VALUES (CompanyName1);*/
+INSERT INTO bit_contractor 
+( User_id,FirstName,LastName, DOB, Gender, StreetAddress,Suburb,State,PostCode,PhoneNo, Email, Start_Date, End_Date, Created_By, Creation_Date, Updated_By, Updated_Date, STATUS)
+ VALUES
+(User_id1,FirstName1,LastName1, DOB1, Gender1, StreetAddress1,Suburb1,State1,PostCode1,PhoneNo1, Email1, Start_Date1, End_Date1, Created_By1, Creation_Date1, Updated_By1, Updated_Date1, STATUS1);
+
+ELSEIF (MODE='UPDATE') THEN
+NULL;
+-- set vuserId =User_id1;
+  /*IF (User_Id1 =0) THEN
+    SELECT User_Id into vuserID FROM bit_contractor WHERE Contractor_Id = contractor_Id1;
+   null;
+  end if; 
+   UPDATE bit_contractor SET 
+             User_id=vuserId 
+                         ,FirstName=FirstName1
+                         ,LastName=LastName1
+	         ,Employee_Type = Employee_Type1
+                         ,DOB=DOB1
+                         ,Gender=Gender1
+	         ,StreetAddress=StreetAddress1
+	         ,Suburb=Suburb1
+	         ,PostCode=PostCode1
+	         ,State=State1
+                         ,PhoneNo=PhoneNo1
+                         ,Email=Email1
+                         ,Start_Date=Start_Date1
+                         ,End_Date=End_Date1
+                        ,STATUS=STATUS1
+                         where Contractor_Id = Contractor_Id1;*/
+ELSEIF (MODE='DELETE') THEN
+
+   UPDATE bit_contractor SET STATUS='INACTIVE'
+   where Contractor_Id = Contractor_Id1;            
+ 
+END IF;
+END

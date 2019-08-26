@@ -1,0 +1,48 @@
+BEGIN
+   DECLARE UserId INT DEFAULT 2;
+   declare vuserId INT DEFAULT 0;
+   declare vcliId INT DEFAULT 0;
+SET @UserId=2;
+
+IF (MODE='INSERT' )
+THEN
+/*INSERT INTO bit_client(CompanyName) VALUES (CompanyName1);*/
+
+
+INSERT INTO bit_user_logon(UserName,account_Type,account_Ref,Password) values(FirstName1,'EMPLOYEE',vempId,'welcome123');
+SET vuserId = LAST_INSERT_ID();
+
+
+INSERT INTO bit_client ( User_id,CompanyName, ContactFirstName, ContactLastName, DOB, Gender, PhoneNo, Email, Start_Date, End_Date, Created_By, Creation_Date, Updated_By, Updated_Date, STATUS)
+ VALUES
+(User_id1,CompanyName1, ContactFirstName1, ContactLastName1, DOB1, Gender1, PhoneNo1, Email1, Start_Date1, End_Date1, Created_By1, Creation_Date1, Updated_By1, Updated_Date1, STATUS1);
+ SET vcliId = LAST_INSERT_ID();
+ 
+ 
+ 
+UPDATE bit_user_logon SET UserName=CONCAT('CL', vuserId),account_Ref=vcliId WHERE user_Id =vuserId;
+
+ELSEIF (MODE='UPDATE') THEN
+   UPDATE bit_client SET User_id=User_id1
+                        ,CompanyName=CompanyName1
+                        ,ContactFirstName=ContactFirstName1
+                         ,ContactLastName=ContactLastName1
+                        ,DOB=DOB1
+                        ,Gender=Gender1
+                        ,PhoneNo=PhoneNo1
+                        ,Email=Email1
+                        ,Start_Date=Start_Date1
+                        ,End_Date=End_Date1
+                        ,STATUS=STATUS1
+                       where Client_Id=Client_Id1;
+            
+ELSEIF (MODE='DELETE') THEN
+ /*DELETE FROM bit_client WHERE Client_Id=Client_Id;
+  DELETE FROM bit_client_location WHERE Client_Id=Client_Id;
+  */
+   UPDATE bit_client SET STATUS='INACTIVE'
+     where Client_Id=Client_Id1;
+            
+ 
+END IF;
+END
